@@ -1,0 +1,22 @@
+{
+	"name": "elastic-search",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest",
+		"start": "node src/server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"@elastic/elasticsearch": "^8.17.0",
+		"body-parser": "^1.20.3",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"jest": "^29.7.0",
+		"mongoose": "^8.9.6",
+		"supertest": "^7.0.0"
+	}
+}
