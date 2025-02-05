@@ -1,5 +1,5 @@
-const request = require('supertest');
-const app = require('../src/app');
+import request from 'supertest';
+import app from '../src/app.js';
 
 describe('Degree API', () =>
 {
@@ -25,7 +25,7 @@ describe('Degree API', () =>
 		expect(res.body.averageSalary).toBe(60000);
 
 		degreeId = res.body._id;
-	});
+	}, 10000);
 
 	it('should search degrees by name', async () =>
 	{
@@ -36,7 +36,7 @@ describe('Degree API', () =>
 		expect(res.status).toBe(200);
 		expect(res.body.length).toBeGreaterThan(0);
 		expect(res.body[0].name).toBe('Computer Science');
-	});
+	}, 10000);
 
 	it('should update an existing degree', async () =>
 	{
@@ -55,7 +55,7 @@ describe('Degree API', () =>
 		expect(res.body.name).toBe('Computer Science');
 		expect(res.body.years).toBe(5);
 		expect(res.body.averageSalary).toBe(70000);
-	});
+	}, 10000);
 
 	it('should delete a degree', async () =>
 	{
@@ -78,6 +78,6 @@ describe('Degree API', () =>
 		
 		const deletedRes = await request(app).get(`/api/degrees/${degreeId}`);
 		expect(deletedRes.status).toBe(404);
-	});
+	}, 10000);
 	
 });

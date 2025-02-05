@@ -1,8 +1,7 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const degreeRoutes = require('./routes/degreeRoutes');
-require('dotenv').config();
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import degreeRoutes from './routes/degreeRoutes.js';
 
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost:27017/degree_db",
@@ -17,4 +16,4 @@ app.use(bodyParser.json());
 
 app.use('/api', degreeRoutes);
 
-module.exports = app;
+export default app;
